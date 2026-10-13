@@ -1,244 +1,944 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#090910">
-  <meta name="description" content="Vishnu Sharma — Lead Software Developer, Backend Engineer and Product Builder.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Vishnu Sharma | Lead Software Developer building secure, scalable backend systems and enterprise platforms." />
+  <meta name="theme-color" content="#090d16" />
   <title>Vishnu Sharma | Lead Software Developer</title>
   <style>
     :root {
-      --bg:#090910;
-      --card:#12121e;
-      --text:#f6f4ff;
-      --muted:#aaa8c0;
-      --purple:#b3a2ff;
-      --pink:#f0a5e8;
-      --border:rgba(255,255,255,.11);
+      --bg: #090d16;
+      --bg-2: #111827;
+      --panel: #101827;
+      --panel-2: #0f172a;
+      --card: rgba(17, 24, 39, 0.8);
+      --text: #edf3ff;
+      --muted: #aab7d4;
+      --soft: #d9e2ff;
+      --line: rgba(255,255,255,0.08);
+      --purple: #bda6ff;
+      --purple-2: #8d7bff;
+      --cyan: #77d7ff;
+      --green: #6fe7b9;
+      --pink: #f6a5d8;
+      --shadow: 0 20px 60px rgba(20, 27, 42, 0.45);
+      --radius: 18px;
     }
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth;scroll-padding-top:85px}
-    body{
-      background:radial-gradient(ellipse at 85% 0%,#35245b55,transparent 38%),var(--bg);
-      color:var(--text);
-      font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
-      line-height:1.7;
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(141, 123, 255, 0.18), transparent 22%),
+        radial-gradient(circle at bottom left, rgba(119, 215, 255, 0.16), transparent 22%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
     }
-    a{color:inherit;text-decoration:none}
-    .container{width:min(1120px,calc(100% - 40px));margin:auto}
-    nav{
-      position:sticky;top:0;z-index:10;
-      background:#090910dc;backdrop-filter:blur(16px);
-      border-bottom:1px solid var(--border);
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
     }
-    .nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .logo{font-size:16px;font-weight:800;letter-spacing:-1px}
-    .logo span{color:var(--purple)}
-    .nav-links{display:flex;gap:18px;align-items:center;font-size:13px;color:var(--muted)}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border-radius:24px;font-size:13px;font-weight:700;cursor:pointer;border:1px solid var(--border)}
-    .btn-primary{background:linear-gradient(120deg,var(--purple),var(--pink));color:#171023;border:0}
-    .hero{padding:60px 0 40px}
-    .hero-inner{display:grid;grid-template-columns:1fr 420px;gap:40px;align-items:start}
-    .hero-title{font-size:28px;font-weight:900;letter-spacing:-1px}
-    .contact-line{color:var(--muted);margin-top:8px;font-size:14px}
-    .summary{margin-top:18px;color:var(--muted);max-width:820px;font-size:15px}
-    section{padding:60px 0}
-    .section-heading small{color:var(--purple);font-weight:800;letter-spacing:2px;font-size:11px}
-    h2{font-size:28px;margin:8px 0}
-    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-    .skills-list{display:flex;flex-wrap:wrap;gap:8px}
-    .skill-pill{background:#ffffff06;padding:8px 10px;border-radius:8px;border:1px solid var(--border);font-size:13px;color:#dcd8ff}
-    .job{background:linear-gradient(145deg,#ffffff06,#ffffff03);padding:16px;border-radius:12px;border:1px solid var(--border)}
-    .project{background:linear-gradient(145deg,#ffffff06,#ffffff03);padding:14px;border-radius:10px;border:1px solid var(--border)}
-    footer{padding:25px 0;color:#85829b;font-size:12px;border-top:1px solid var(--border)}
-    @media(max-width:900px){.hero-inner{grid-template-columns:1fr}.two-col{grid-template-columns:1fr}.hero{padding-top:30px}}
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(12px);
+      background: rgba(9, 13, 22, 0.75);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 74px;
+    }
+
+    .brand {
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .brand span { color: var(--purple); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .pill-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--text);
+      font-weight: 700;
+      transition: 0.2s ease;
+      border-color: rgba(255,255,255,0.12);
+    }
+
+    .pill-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: var(--shadow);
+    }
+
+    .pill-btn.primary {
+      background: linear-gradient(135deg, var(--purple), var(--pink));
+      border: none;
+      color: #170d1b;
+    }
+
+    .hero {
+      padding: 78px 0 40px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.9fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--purple);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.72rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 4.5vw, 5rem);
+      line-height: 1.02;
+      letter-spacing: -0.055em;
+      font-weight: 900;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, var(--purple), var(--pink), var(--cyan));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .subtext {
+      margin-top: 18px;
+      max-width: 700px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .contact-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 26px;
+      color: var(--soft);
+      font-size: 0.96rem;
+    }
+
+    .contact-meta a {
+      color: var(--soft);
+      border-bottom: 1px solid transparent;
+    }
+
+    .contact-meta a:hover {
+      border-color: var(--purple);
+    }
+
+    .hero-actions {
+      margin-top: 26px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .mini-badges {
+      margin-top: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .mini-badge {
+      font-size: 0.76rem;
+      color: var(--soft);
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 7px 10px;
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(17,24,39,0.9), rgba(13, 18, 28, 0.8));
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(141,123,255,0.13), rgba(119,215,255,0.08), transparent 60%);
+      pointer-events: none;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .dots {
+      display: flex;
+      gap: 8px;
+    }
+    .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .dot.red { background: #ff6b6b; }
+    .dot.yellow { background: #f7d154; }
+    .dot.green { background: #69e39d; }
+
+    .filename {
+      font-size: 0.74rem;
+      color: var(--muted);
+      letter-spacing: 0.03em;
+    }
+
+    .code-box {
+      margin-top: 18px;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: #ebf0ff;
+      font-family: "SFMono-Regular", Consolas, monospace;
+      white-space: pre-wrap;
+      background: rgba(255,255,255,0.02);
+      border-radius: 12px;
+      padding: 12px 12px 8px;
+    }
+
+    .token-purple { color: #c7b7ff; }
+    .token-cyan { color: #9feafa; }
+    .token-green { color: #9fe7b6; }
+    .token-pink { color: #f2b7e4; }
+
+    .stat-grid {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px 10px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 2px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    section {
+      padding: 38px 0 10px;
+    }
+
+    .section-header {
+      margin-bottom: 18px;
+    }
+
+    .section-header small {
+      color: var(--purple);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 800;
+      font-size: 0.72rem;
+    }
+
+    .section-header h2 {
+      margin: 8px 0 0;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      letter-spacing: -0.04em;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 20px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(17,24,39,0.8), rgba(15, 19, 30, 0.75));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .match-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .match-item {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 12px;
+      color: var(--soft);
+      font-size: 0.82rem;
+    }
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .skill {
+      background: linear-gradient(180deg, rgba(17,24,39,0.8), rgba(15, 19, 30, 0.75));
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px 16px;
+      min-height: 136px;
+      transition: 0.2s ease;
+    }
+
+    .skill:hover {
+      transform: translateY(-3px);
+      border-color: rgba(189, 166, 255, 0.5);
+    }
+
+    .skill-icon {
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+    }
+
+    .skill h3 {
+      margin: 0 0 6px;
+      font-size: 1rem;
+    }
+
+    .skill p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.5;
+    }
+
+    .experience-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .job {
+      background: linear-gradient(180deg, rgba(17,24,39,0.8), rgba(15, 19, 30, 0.75));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+    }
+
+    .job-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .job-title {
+      font-size: 1.08rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .job-company {
+      color: var(--purple);
+      font-weight: 700;
+    }
+
+    .job-date {
+      color: var(--muted);
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .job ul {
+      margin: 0;
+      padding-left: 22px;
+      color: var(--muted);
+    }
+
+    .job li + li { margin-top: 8px; }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .project {
+      background: linear-gradient(180deg, rgba(17,24,39,0.8), rgba(15, 19, 30, 0.75));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      transition: 0.2s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-2px);
+      border-color: rgba(189,166,255,0.4);
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .project-title {
+      font-size: clamp(1.1rem, 1.8vw, 1.7rem);
+      line-height: 1.25;
+      letter-spacing: -0.03em;
+      font-weight: 800;
+      margin: 0;
+    }
+
+    .project-company {
+      color: var(--purple);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 800;
+      margin-top: 4px;
+    }
+
+    .project ul {
+      margin: 12px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .project li + li { margin-top: 8px; }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .tag {
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--line);
+      font-size: 0.75rem;
+      color: var(--soft);
+    }
+
+    .contact-panel {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      background: linear-gradient(120deg, rgba(141,123,255,0.12), rgba(119,215,255,0.08), rgba(17,24,39,0.9));
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 26px 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-panel h3 {
+      margin: 0;
+      font-size: clamp(1.4rem, 2vw, 2.2rem);
+      letter-spacing: -0.04em;
+    }
+
+    .contact-panel p {
+      margin: 8px 0 0;
+      color: var(--muted);
+    }
+
+    footer {
+      padding: 28px 0 48px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .summary-grid,
+      .projects-grid,
+      .skill-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero { padding-top: 54px; }
+      .nav { min-height: 66px; }
+      .brand { letter-spacing: 0.04em; }
+      .contact-panel { align-items: flex-start; }
+    }
+
+    @media (max-width: 560px) {
+      .nav-links { gap: 8px; }
+      .pill-btn { padding: 10px 13px; font-size: 0.78rem; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .hero-actions .pill-btn { width: 100%; }
+      .contact-meta { gap: 8px 12px; }
+      .job-head { display: block; }
+    }
   </style>
 </head>
 <body>
-  <nav>
-    <div class="container nav-inner">
-      <div class="logo">VISHNU SHARMA <span>.</span></div>
+  <header>
+    <div class="container nav">
+      <div class="brand">Vishnu <span>Sharma</span></div>
       <div class="nav-links">
-        <a class="btn btn-primary" href="#contact">Contact</a>
-        <a class="btn" href="#projects">Projects</a>
+        <a class="pill-btn" href="#projects">Projects</a>
+        <a class="pill-btn primary" href="#contact">Hire Me</a>
       </div>
     </div>
-  </nav>
+  </header>
 
   <main class="container">
-    <section class="hero" id="home">
-      <div class="hero-inner">
+    <section class="hero">
+      <div class="hero-grid">
         <div>
-          <div class="hero-title">VISHNU SHARMA</div>
-          <div class="contact-line">Jaipur • <a href="mailto:vishnushramaksg34@gmail.com">vishnushramaksg34@gmail.com</a> • <a href="tel:+918690482938">+91 86904 82938</a></div>
-          <p class="summary">Lead Software Developer with 5+ years of experience in building scalable, cloud-native backend systems using Python. Expertise in microservices, REST APIs, and high-performance systems with Laravel, PHP, FastAPI, Pyramid, SQLAlchemy, PostgreSQL, MySQL, MSSQL and AWS. Proven track record in designing distributed systems, optimizing performance, and leading teams to deliver enterprise-grade solutions.</p>
+          <div class="eyebrow">Lead Software Developer</div>
+          <h1>I build <span class="gradient-text">secure, scalable backend systems</span> for products and enterprises.</h1>
+          <p class="subtext">
+            I’m Vishnu Sharma, a backend-focused software developer with 5+ years of experience delivering cloud-native platforms, microservices, APIs, and data-driven business systems using Python, Laravel, PostgreSQL, MySQL, AWS, and modern application architecture.
+          </p>
+
+          <div class="contact-meta">
+            <span>Jaipur</span>
+            <a href="mailto:vishnushramaksg34@gmail.com">vishnushramaksg34@gmail.com</a>
+            <a href="tel:+918690482938">+91 86904 82938</a>
+          </div>
+
+          <div class="hero-actions">
+            <a class="pill-btn primary" href="mailto:vishnushramaksg34@gmail.com?subject=Hiring%20Opportunity">Hire for Projects</a>
+            <a class="pill-btn" href="#projects">View Projects</a>
+          </div>
+
+          <div class="mini-badges">
+            <span class="mini-badge">Python • FastAPI • Pyramid</span>
+            <span class="mini-badge">Laravel • PHP • REST APIs</span>
+            <span class="mini-badge">AWS • PostgreSQL • MySQL</span>
+          </div>
         </div>
-        <div>
-          <div style="background:linear-gradient(145deg,#1d1a31,#10101a);padding:18px;border-radius:12px;border:1px solid var(--border)">
-            <h3 style="margin:0 0 10px 0">Technical Snapshot</h3>
-            <div class="skills-list">
-              <div class="skill-pill">Python</div>
-              <div class="skill-pill">Java</div>
-              <div class="skill-pill">Node.js</div>
-              <div class="skill-pill">PHP</div>
-              <div class="skill-pill">Pyramid</div>
-              <div class="skill-pill">FastAPI</div>
-              <div class="skill-pill">SQLAlchemy</div>
-              <div class="skill-pill">PostgreSQL</div>
-              <div class="skill-pill">MySQL</div>
-              <div class="skill-pill">DynamoDB</div>
-              <div class="skill-pill">Redis</div>
-              <div class="skill-pill">AWS (Lambda, EC2, S3, RDS)</div>
-              <div class="skill-pill">React.js</div>
-              <div class="skill-pill">Docker</div>
+
+        <div class="hero-card">
+          <div class="card-header">
+            <div class="dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <span class="filename">backend_system.py</span>
+          </div>
+
+          <div class="code-box"><span class="token-purple">class</span> BackendBuilder:
+  <span class="token-purple">def</span> build(self, product):
+    api = <span class="token-pink">design_api</span>(product)
+    infra = <span class="token-pink">deploy_securely</span>(api)
+    data = <span class="token-pink">optimize_queries</span>(infra)
+    <span class="token-purple">return</span> {
+      <span class="token-green">"scale"</span>: <span class="token-green">"enterprise-ready"</span>,
+      <span class="token-green">"quality"</span>: <span class="token-green">"production-grade"</span>
+    }
+</div>
+
+          <div class="stat-grid">
+            <div class="stat">
+              <strong>5+</strong>
+              <span>Years experience</span>
+            </div>
+            <div class="stat">
+              <strong>10+</strong>
+              <span>Business systems delivered</span>
+            </div>
+            <div class="stat">
+              <strong>Microservices</strong>
+              <span>Distributed backend design</span>
+            </div>
+            <div class="stat">
+              <strong>Cloud</strong>
+              <span>AWS + scalable deployment</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="experience">
-      <div class="section-heading">
-        <small>EXPERIENCE</small>
-        <h2>Work Experience</h2>
+    <section id="about">
+      <div class="section-header">
+        <small>Professional Summary</small>
+        <h2>Built for scale, performance, and business impact.</h2>
       </div>
-      <div class="two-col">
+
+      <div class="summary-grid">
+        <div class="card">
+          <p>
+            I work at the intersection of software engineering and product thinking — designing backend systems that are reliable, maintainable, and ready for real business workflows. My experience spans enterprise APIs, financial and HR systems, SaaS platforms, workflow automation, and scalable cloud deployments.
+          </p>
+        </div>
+
+        <div class="card">
+          <p>
+            I help teams move faster by turning business requirements into clear architecture, efficient APIs, and robust database-backed workflows that can scale with growth.
+          </p>
+          <div class="match-list">
+            <span class="match-item">Backend Architecture</span>
+            <span class="match-item">API Design</span>
+            <span class="match-item">Performance Tuning</span>
+            <span class="match-item">Cloud Deployment</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-header">
+        <small>Technical Skills</small>
+        <h2>Core stack and engineering capability.</h2>
+      </div>
+
+      <div class="skill-grid">
+        <article class="skill">
+          <div class="skill-icon">⚙️</div>
+          <h3>Backend</h3>
+          <p>Python, PHP, Java, Node.js, REST APIs, microservices, application architecture.</p>
+        </article>
+
+        <article class="skill">
+          <div class="skill-icon">🧩</div>
+          <h3>Frameworks</h3>
+          <p>Pyramid, FastAPI, Laravel, SQLAlchemy ORM, Pydantic, LAMP stack.</p>
+        </article>
+
+        <article class="skill">
+          <div class="skill-icon">🗄️</div>
+          <h3>Databases</h3>
+          <p>PostgreSQL, MySQL, MSSQL, DynamoDB, Redis, Alembic migrations, indexing.</p>
+        </article>
+
+        <article class="skill">
+          <div class="skill-icon">☁️</div>
+          <h3>Cloud</h3>
+          <p>AWS EC2, S3, RDS, Lambda, API Gateway, IAM, ELB, Athena, Azure Key Vault.</p>
+        </article>
+
+        <article class="skill">
+          <div class="skill-icon">🛡️</div>
+          <h3>Security</h3>
+          <p>Secure authentication, role-based access, backend validation, production troubleshooting.</p>
+        </article>
+
+        <article class="skill">
+          <div class="skill-icon">🚀</div>
+          <h3>DevOps</h3>
+          <p>GitHub, GitLab, Bitbucket, CI/CD workflows, scalable deployment, monitoring.</p>
+        </article>
+
+        <article class="skill">
+          <div class="skill-icon">📱</div>
+          <h3>Frontend</h3>
+          <p>React.js, JavaScript, HTML5, CSS, working alongside product and UI teams.</p>
+        </article>
+
+        <article class="skill">
+          <div class="skill-icon">📐</div>
+          <h3>Practices</h3>
+          <p>Agile delivery, code reviews, SDLC, unit testing, system design, performance tuning.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="section-header">
+        <small>Experience</small>
+        <h2>Career growth across product, enterprise, and backend engineering.</h2>
+      </div>
+
+      <div class="experience-list">
         <div class="job">
-          <strong>Automatedpros — Lead Software Developer</strong>
-          <div style="color:var(--muted);margin:6px 0">Apr 2025 – Present</div>
-          <ul style="margin-top:8px;color:var(--muted)">
-            <li>Designed scalable microservices architecture for enterprise-grade backend system.</li>
-            <li>Built high-performance APIs using Pyramid & PostgreSQL and implemented Redis caching to reduce response times.</li>
-            <li>Worked on AWS deployments (EC2, S3, RDS) and system scalability.</li>
-            <li>Technologies: Python, Pyramid, PostgreSQL, AWS, Redis.</li>
+          <div class="job-head">
+            <div>
+              <div class="job-title">Lead Software Developer</div>
+              <div class="job-company">Automatedpros</div>
+            </div>
+            <div class="job-date">Apr 2025 – Present</div>
+          </div>
+          <ul>
+            <li>Designed scalable microservices architecture for enterprise-grade backend systems.</li>
+            <li>Built high-performance APIs using Pyramid and PostgreSQL and implemented Redis caching to reduce latency.</li>
+            <li>Worked on AWS deployment and system scalability for production workloads.</li>
           </ul>
         </div>
 
         <div class="job">
-          <strong>E Edge Technology — Senior Software Developer</strong>
-          <div style="color:var(--muted);margin:6px 0">May 2023 – Apr 2025</div>
-          <ul style="margin-top:8px;color:var(--muted)">
-            <li>Built backend services for unlisted share trading and ESOP workflows; developed scalable APIs handling financial transactions and integrations.</li>
-            <li>Technologies: Laravel, MySQL, AWS S3.</li>
+          <div class="job-head">
+            <div>
+              <div class="job-title">Senior Software Developer</div>
+              <div class="job-company">E Edge Technology</div>
+            </div>
+            <div class="job-date">May 2023 – Apr 2025</div>
+          </div>
+          <ul>
+            <li>Built backend services for unlisted share trading and ESOP platforms.</li>
+            <li>Developed scalable APIs handling financial transactions and integrations.</li>
+            <li>Worked with Laravel, MySQL, and AWS S3 for production workflows.</li>
           </ul>
         </div>
 
         <div class="job">
-          <strong>Quarks Technosoft Pvt. Ltd. — Senior Software Developer</strong>
-          <div style="color:var(--muted);margin:6px 0">Apr 2022 – Apr 2023</div>
-          <ul style="margin-top:8px;color:var(--muted)">
-            <li>Built high-performance APIs and integrated third-party services and cloud APIs.</li>
-            <li>Technologies: Laravel, LAMP, MySQL.</li>
+          <div class="job-head">
+            <div>
+              <div class="job-title">Senior Software Developer</div>
+              <div class="job-company">Quarks Technosoft Pvt. Ltd.</div>
+            </div>
+            <div class="job-date">Apr 2022 – Apr 2023</div>
+          </div>
+          <ul>
+            <li>Developed high-performance APIs using LAMP stack and integrated third-party services.</li>
+            <li>Built backend services for product workflows and cloud-based integrations.</li>
           </ul>
         </div>
 
         <div class="job">
-          <strong>Innojar Tech Pvt. Ltd. — Software Developer</strong>
-          <div style="color:var(--muted);margin:6px 0">Sep 2020 – Apr 2022</div>
-          <ul style="margin-top:8px;color:var(--muted)">
-            <li>Developed backend modules for HRMS & LMS and result processing modules for online examination system.</li>
-            <li>Technologies: Laravel, React, MySQL, MSSQL.</li>
+          <div class="job-head">
+            <div>
+              <div class="job-title">Software Developer</div>
+              <div class="job-company">Innojar Tech Pvt. Ltd.</div>
+            </div>
+            <div class="job-date">Sep 2020 – Apr 2022</div>
+          </div>
+          <ul>
+            <li>Developed backend modules for HRMS and LMS platforms.</li>
+            <li>Built APIs for employee management, learning workflows, report generation, and examination result processing.</li>
+            <li>Worked on database design and logic optimization in Laravel and MySQL/MSSQL environments.</li>
           </ul>
         </div>
 
         <div class="job">
-          <strong>DandY IT Solutions — Junior Developer</strong>
-          <div style="color:var(--muted);margin:6px 0">June 2019 – Aug 2020</div>
-          <ul style="margin-top:8px;color:var(--muted)">
+          <div class="job-head">
+            <div>
+              <div class="job-title">Junior Developer</div>
+              <div class="job-company">DandY IT Solutions</div>
+            </div>
+            <div class="job-date">June 2019 – Aug 2020</div>
+          </div>
+          <ul>
             <li>Built workflow-based backend features for automated call allocation and tracking.</li>
-            <li>Technologies: Laravel, PostgreSQL.</li>
+            <li>Improved operational efficiency through workflow automation and backend optimization.</li>
           </ul>
         </div>
       </div>
     </section>
 
     <section id="projects">
-      <div class="section-heading">
-        <small>PROJECTS</small>
-        <h2>Selected Projects</h2>
+      <div class="section-header">
+        <small>Projects</small>
+        <h2>Selected work across enterprise and product platforms.</h2>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px">
-        <div class="project">
-          <strong>Nucleus — Distributed Enterprise Backend Platform (AutomatedPros)</strong>
-          <ul style="margin-top:8px;color:var(--muted)">
-            <li>Designed scalable microservices architecture and built high-performance APIs using Pyramid & PostgreSQL.</li>
-            <li>Implemented Redis caching and worked on AWS deployment (EC2, S3, RDS).</li>
-            <li>Technologies: Python, Pyramid, PostgreSQL, AWS, Redis.</li>
-          </ul>
-        </div>
 
-        <div class="project">
-          <strong>PRISM — Secure Enterprise Platform (AutomatedPros)</strong>
-          <ul style="margin-top:8px;color:var(--muted)">
-            <li>Developed REST APIs using FastAPI & SQLAlchemy; designed database migrations with Alembic.</li>
-            <li>Implemented secure authentication and optimized queries and indexing for performance.</li>
-            <li>Technologies: Python, SQLAlchemy, Alembic, PostgreSQL, AWS.</li>
+      <div class="projects-grid">
+        <article class="project">
+          <div class="project-header">
+            <div>
+              <h3 class="project-title">Nucleus — Distributed Enterprise Backend Platform</h3>
+              <div class="project-company">AutomatedPros</div>
+            </div>
+          </div>
+          <ul>
+            <li>Designed scalable microservices architecture for enterprise-grade backend systems.</li>
+            <li>Built high-performance APIs using Pyramid and PostgreSQL.</li>
+            <li>Implemented Redis caching and AWS deployment for production optimization.</li>
           </ul>
-        </div>
+          <div class="tag-row">
+            <span class="tag">Python</span>
+            <span class="tag">Pyramid</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">AWS</span>
+            <span class="tag">Redis</span>
+          </div>
+        </article>
 
-        <div class="project">
-          <strong>Unizon — Share trading & ESOP Platform (E-edge Technology)</strong>
-          <ul style="margin-top:8px;color:var(--muted)">
-            <li>Built backend services for unlisted share trading and ESOP workflows; handled financial transactions at scale.</li>
-            <li>Technologies: Laravel, MySQL, AWS S3.</li>
+        <article class="project">
+          <div class="project-header">
+            <div>
+              <h3 class="project-title">PRISM — Secure Enterprise Platform</h3>
+              <div class="project-company">AutomatedPros</div>
+            </div>
+          </div>
+          <ul>
+            <li>Developed REST APIs using FastAPI and SQLAlchemy.</li>
+            <li>Designed database migration workflows with Alembic for secure data operations.</li>
+            <li>Implemented secure authentication and performance optimizations for backend workflows.</li>
           </ul>
-        </div>
+          <div class="tag-row">
+            <span class="tag">FastAPI</span>
+            <span class="tag">SQLAlchemy</span>
+            <span class="tag">Alembic</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">AWS</span>
+          </div>
+        </article>
 
-        <div class="project">
-          <strong>Advice Fit — Fitness Ecosystem Platform (Quarks Technosoft)</strong>
-          <ul style="margin-top:8px;color:var(--muted)">
-            <li>Built high-performance APIs using LAMP and integrated third-party services.</li>
-            <li>Technologies: Laravel, LAMP, MySQL.</li>
+        <article class="project">
+          <div class="project-header">
+            <div>
+              <h3 class="project-title">Unizon — Share Trading &amp; ESOP Platform</h3>
+              <div class="project-company">E-edge Technology</div>
+            </div>
+          </div>
+          <ul>
+            <li>Built backend services for unlisted share trading and ESOP workflows.</li>
+            <li>Handled financial transactions and integrations with scalable API design.</li>
           </ul>
-        </div>
+          <div class="tag-row">
+            <span class="tag">Laravel</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">AWS S3</span>
+            <span class="tag">Finance APIs</span>
+          </div>
+        </article>
 
-        <div class="project">
-          <strong>HRMS & LMS (Innojar Tech)</strong>
-          <ul style="margin-top:8px;color:var(--muted)">
-            <li>Developed backend modules for employee management, learning workflows, and reporting systems.</li>
-            <li>Technologies: Laravel, React, MySQL.</li>
+        <article class="project">
+          <div class="project-header">
+            <div>
+              <h3 class="project-title">Advice Fit — Fitness Ecosystem Platform</h3>
+              <div class="project-company">Quarks Technosoft</div>
+            </div>
+          </div>
+          <ul>
+            <li>Built high-performance APIs using the LAMP stack.</li>
+            <li>Integrated third-party services and cloud APIs to support fitness platform workflows.</li>
           </ul>
-        </div>
+          <div class="tag-row">
+            <span class="tag">Laravel</span>
+            <span class="tag">LAMP</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Third-party APIs</span>
+          </div>
+        </article>
 
-        <div class="project">
-          <strong>Online Examination System (QB) — Result Processing Modules (Innojar Tech)</strong>
-          <ul style="margin-top:8px;color:var(--muted)">
-            <li>Implemented result processing modules and improved data accuracy and report generation.</li>
-            <li>Technologies: Laravel, MSSQL.</li>
+        <article class="project">
+          <div class="project-header">
+            <div>
+              <h3 class="project-title">HRMS &amp; LMS</h3>
+              <div class="project-company">Innojar Tech</div>
+            </div>
+          </div>
+          <ul>
+            <li>Developed modules for employee management and learning workflows.</li>
+            <li>Built APIs for reporting, employee records, and training operations.</li>
           </ul>
-        </div>
+          <div class="tag-row">
+            <span class="tag">Laravel</span>
+            <span class="tag">React</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Reporting</span>
+          </div>
+        </article>
 
-        <div class="project">
-          <strong>Call Allocation System (CLA) — Workflow Automation (DandY IT Solutions)</strong>
-          <ul style="margin-top:8px;color:var(--muted)">
-            <li>Built workflow-based backend features for automated call allocation and tracking.</li>
-            <li>Technologies: Laravel, PostgreSQL.</li>
+        <article class="project">
+          <div class="project-header">
+            <div>
+              <h3 class="project-title">Online Examination System (QB)</h3>
+              <div class="project-company">Innojar Tech</div>
+            </div>
+          </div>
+          <ul>
+            <li>Developed result processing modules and backend logic for examination workflows.</li>
+            <li>Improved data accuracy and report generation for student evaluation processes.</li>
           </ul>
-        </div>
+          <div class="tag-row">
+            <span class="tag">Laravel</span>
+            <span class="tag">MSSQL</span>
+            <span class="tag">Reports</span>
+            <span class="tag">Process Automation</span>
+          </div>
+        </article>
       </div>
     </section>
 
     <section id="education">
-      <div class="section-heading">
-        <small>EDUCATION</small>
-        <h2>Bachelor of Computer Science — ACERC, Ajmer</h2>
-        <p style="color:var(--muted)">Ajmer, India • GPA: 79%</p>
+      <div class="section-header">
+        <small>Education</small>
+        <h2>Bachelor of Computer Science</h2>
+      </div>
+      <div class="card">
+        <p><strong>ACERC, Ajmer</strong> • Ajmer, India</p>
+        <p style="margin-top:8px; color: var(--muted);">GPA: 79%</p>
       </div>
     </section>
 
     <section id="contact">
-      <div class="section-heading">
-        <small>CONTACT</small>
-        <h2>Get in touch</h2>
-        <p style="color:var(--muted)">Jaipur • <a href="mailto:vishnushramaksg34@gmail.com">vishnushramaksg34@gmail.com</a> • <a href="tel:+918690482938">+91 86904 82938</a></p>
+      <div class="contact-panel">
+        <div>
+          <h3>Available for product, backend, and engineering opportunities.</h3>
+          <p>Open to full-time, contract, and consulting work with teams building scalable digital products.</p>
+        </div>
+        <div class="hero-actions" style="margin-top:0;">
+          <a class="pill-btn primary" href="mailto:vishnushramaksg34@gmail.com?subject=Project%20Inquiry">Email Me</a>
+          <a class="pill-btn" href="tel:+918690482938">Call Now</a>
+        </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container" style="text-align:center">© <span id="year"></span> Vishnu Sharma. Built with care.</div>
+    © <span id="year"></span> Vishnu Sharma • Built with care for product and enterprise teams.
   </footer>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear()</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
